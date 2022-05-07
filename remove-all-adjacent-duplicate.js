@@ -1,6 +1,6 @@
 const removeDuplicates = (s, k) => {
   const stack = [];
-  const ans = []
+  let ans = ""
 
   for (let char of s) {
     if (stack.length > 0 && char === stack[stack.length - 1].split(",")[0]) {
@@ -14,11 +14,11 @@ const removeDuplicates = (s, k) => {
   for (let ele of stack){
     let [c,v] = ele.split(",");
     for (let i = 0 ; i < v; i++){
-      ans.push(c)
+      ans += c
     }
   }
 
-  return ans.join("")
+  return ans
 };
 
 console.log(removeDuplicates("deeedbbcccbdaa", 3));
